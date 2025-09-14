@@ -38,12 +38,17 @@ body {
 .banner-section-bg-container {
     background-image: url("https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.1.0");
     background-size: cover;
-    background-position: center;
     height: 100vh;
     display: flex;
     align-items: center;
+    margin-top: 0; 
+    padding-top: 0; 
 }
 
+.banner-section-bg-container > .text-center {
+    margin-top: 60px;
+    width: 100%;
+}
 .banner-heading {
     color: white;
     font-family: roboto;
@@ -299,6 +304,7 @@ body {
     justify-content: center;
 }
 
+/* Chatbot icon - make sure it's visible by default */
 #chatbot-icon {
     position: fixed;
     bottom: 20px;
@@ -308,7 +314,7 @@ body {
     border-radius: 50%;
     width: 60px;
     height: 60px;
-    display: flex;
+    display: flex; /* Changed to flex */
     align-items: center;
     justify-content: center;
     font-size: 24px;
@@ -316,11 +322,6 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     z-index: 10000;
     transition: all 0.3s ease;
-}
-
-#chatbot-icon:hover {
-    background: #a58d00;
-    transform: scale(1.1);
 }
 
 #chatbot-window {
@@ -336,6 +337,11 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    display: none; /* Hidden by default */
+}
+
+#chatbot-window:not(.hidden) {
+    display: flex; 
 }
 
 .hidden {
@@ -444,7 +450,34 @@ body {
 #send-btn:hover {
     background: #a58d00;
 }
+/* Typing indicator styles */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: white;
+    border-radius: 18px;
+    align-self: flex-start;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+}
 
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #d0b200;
+    border-radius: 50%;
+    margin: 0 2px;
+    animation: typing-animation 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typing-animation {
+    0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+    40% { transform: scale(1); opacity: 1; }
+}
 @media (max-width: 768px) {
     #chatbot-window {
         width: 90%;
