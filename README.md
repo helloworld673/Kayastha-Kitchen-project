@@ -29,4 +29,37 @@ kayastha-kitchen/
 ├── style.css # Styles and responsive design
 ├── script.js # Chatbot logic and AI integration
 ├── README.md # Project documentation
-└── assets/ # Images and additional resources (optional)
+
+
+## 🏗️ How to Run This Project
+
+1. **Download all files**: `index.html`, `style.css`, `script.js`, `README.md`
+2. **Place them in the same folder** on your computer
+3. **Open `index.html`** in any web browser
+
+## 🧠 AI Backend (Hugging Face Space)
+This project uses a Hugging Face Space with OpenAI integration for AI-powered responses:
+**Hugging Face Space**: [View AI Backend](https://huggingface.co/spaces/guni501/myrestaurant-chatbot)
+
+### Files in Hugging Face Space:
+- `app.py` - Main Python application with OpenAI integration
+- `requirements.txt` - Dependencies including OpenAI package
+- Custom restaurant knowledge base and response system
+
+### How the AI Integration Works:
+1. Complex questions are sent to the Hugging Face Space
+2. The Space uses OpenAI's GPT-3.5 Turbo API for intelligent responses
+3. AI responses are returned to the website chatbot
+4. Simple questions are handled locally for faster response times
+
+## 📞 Contact & Support
+For questions about this project, please contact: [gunibhatnagar1@gmail.com]
+
+**Developed By**: Guni Bhatnagar
+**Course**: B.com Honours 
+**Institution**: Delhi University
+**Submission Date**: 15-September-2025
+
+*This project was created for educational purposes to demonstrate AI integration in web development.*
+
+
