@@ -23,7 +23,6 @@ const RESTAURANT_INFO = {
     "reservation_policy": "Reservations recommended, especially on weekends. Call +91 976083XXXX to book."
 };
 
-
 const chatbotIcon = document.getElementById("chatbot-icon");
 const chatbotWindow = document.getElementById("chatbot-window");
 const closeBtn = document.getElementById("close-btn");
@@ -63,7 +62,7 @@ function getRestaurantResponse(userInput) {
     } else if (anyWordIn(userInput, ["vegetarian", "vegan", "jain", "gluten", "diet", "allergy"])) {
         return `🥦 <strong>Dietary Preferences:</strong><br>We have extensive vegetarian options. We can accommodate vegan, Jain, and gluten-free requests. Just inform us when ordering.`;
     } else {
-        return "I can help with restaurant information! Ask about our hours, menu, location, or reservations. What would you like to know?";
+        return null;
     }
 }
 
@@ -82,8 +81,7 @@ closeBtn.addEventListener("click", () => {
     chatbotIcon.style.display = "flex";
 });
 
-
-function sendMessage() {
+async function sendMessage() {
     const message = userInput.value.trim();
     if (!message) return;
 
@@ -92,16 +90,28 @@ function sendMessage() {
 
     showTypingIndicator();
 
-    setTimeout(() => {
+    try {
 
-        const response = getRestaurantResponse(message);
+        const ruleBasedResponse = getRestaurantResponse(message);
+
+        if (ruleBasedResponse !== null) {
+
+            removeTypingIndicator();
+            addMessage(ruleBasedResponse, 'bot');
+        } else {
+
+            const aiResponse = await getAIResponseFromHuggingFace(message);
+            removeTypingIndicator();
+            addMessage(aiResponse, 'bot');
+        }
+    } catch (error) {
 
         removeTypingIndicator();
 
-        addMessage(response, 'bot');
-    }, 1000);
+        addMessage("I'm having trouble connecting right now. Please try again later.", 'bot');
+        console.error('Error:', error);
+    }
 }
-
 
 function addMessage(text, sender) {
     const messageDiv = document.createElement('div');
@@ -130,7 +140,6 @@ function showTypingIndicator() {
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-
 function removeTypingIndicator() {
     const typingIndicator = document.getElementById('typing-indicator');
     if (typingIndicator) {
@@ -138,6 +147,34 @@ function removeTypingIndicator() {
     }
 }
 
+async function getAIResponseFromHuggingFace(userMessage) {
+    try {
+        const response = await fetch("https://guni501-myrestaurant-chatbot.hf.space/run/predict", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                data: [userMessage]
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (data && data.data && data.data.length > 0) {
+            return data.data[0];
+        } else {
+            return "I'm not sure how to respond to that. Could you please ask something else?";
+        }
+    } catch (error) {
+        console.error('Error calling Hugging Face API:', error);
+        return "I'm having trouble connecting to the AI service right now. Please try again later or ask about our menu, hours, or location.";
+    }
+}
 
 sendBtn.addEventListener('click', sendMessage);
 userInput.addEventListener('keypress', (e) => {
@@ -153,14 +190,12 @@ document.addEventListener('click', (event) => {
         chatbotIcon.style.display = "flex";
     }
 });
-
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && !chatbotWindow.classList.contains('hidden')) {
         chatbotWindow.classList.add("hidden");
         chatbotIcon.style.display = "flex";
     }
 });
-
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -175,25 +210,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-async function getAIResponse(userMessage) {
-    try {
-
-        const response = await fetch("https://guni501/myrestaurant-chatbot.hf.space/chat", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                message: userMessage
-            })
-        });
-
-        const data = await response.json();
-        return data.response;
-    } catch (error) {
-        console.error('Error calling API:', error);
-        return "I'm having trouble connecting right now. Please call us at " + RESTAURANT_INFO.phone + " for assistance.";
-    }
-}
-
-console.log('Kayastha Kitchen website loaded successfully!');
+console.log('Kayastha Kitchen website with AI integration loaded successfully!');
