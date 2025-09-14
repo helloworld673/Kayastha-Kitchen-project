@@ -2,8 +2,6 @@
 
 A responsive restaurant website featuring an AI chatbot integrated with OpenAI's GPT API for enhanced customer interaction.
 
-![Restaurant Website](https://i.ibb.co/MkBfrbQV/kayastha-kitchen.png)
-
 ## 🚀 Features
 
 - **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
