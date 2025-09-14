@@ -305,7 +305,6 @@ body {
     justify-content: center;
 }
 
-/* Chatbot icon - make sure it's visible by default */
 #chatbot-icon {
     position: fixed;
     bottom: 20px;
@@ -338,16 +337,13 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    display: none; /* Hidden by default */
+   
 }
 
-#chatbot-window:not(.hidden) {
-    display: flex; 
-}
-
-.hidden {
+#chatbot-window.hidden {
     display: none !important;
 }
+
 
 #chat-header {
     background: #d0b200;
