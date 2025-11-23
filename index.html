@@ -4,40 +4,44 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project - Kayastha Kitchen</title>
+    <title>Kayastha Kitchen - Authentic Indian Cuisine</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="https://i.ibb.co/MkBfrbQV/kayastha-kitchen.png" alt="Kayastha Kitchen" class="kayastha-kitchen-logo">
-            <span class="d-none d-md-inline">Kayastha Kitchen</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#wcu-Section">Why Choose Us?</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#exploreMenuSection">Explore Menu</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#deliveryAndPaymentSection">Delivery & Payment</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#followUsSection">Follow Us</a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top compact-navbar">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="https://i.ibb.co/MkBfrbQV/kayastha-kitchen.png" alt="Kayastha Kitchen" class="kayastha-kitchen-logo"/>
+                <span class="d-none d-md-inline">Kayastha Kitchen</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#wcu-Section">Why Choose Us?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#exploreMenuSection">Explore Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#aiManagementSection">AI Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#deliveryAndPaymentSection">Delivery & Payment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#followUsSection">Follow Us</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+
     <div class="banner-section-bg-container d-flex flex-column justify-content-center">
         <div class="text-center">
             <h1 class="banner-heading mb-3">Get Delicious Food Anytime</h1>
@@ -46,6 +50,7 @@
             <button class="custom-outline-button">Order Now</button>
         </div>
     </div>
+
     <div class="wcu-section pt-5 pb-5" id="wcu-Section">
         <div class="container">
             <div class="row">
@@ -81,98 +86,176 @@
         </div>
     </div>
 
-    <div class="explore-menu-section pt-3 pb-3" id="exploreMenuSection">
+    <!-- AI Restaurant Management Section -->
+    <div class="ai-management-section pt-5 pb-5" id="aiManagementSection">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <h1 class="menu-section-heading ml-3">
-                        Explore Menu
-                    </h1>
+                <div class="col-12 text-center">
+                    <h1 class="menu-section-heading">AI Restaurant Management</h1>
+                    <p class="wcu-section-description">Smart solutions for modern restaurants</p>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="menu-item-card shadow p-3 mb-3">
-                        <img src="https://images.unsplash.com/photo-1666001120694-3ebe8fd207be?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFuZWVyJTIwdGlra2F8ZW58MHx8MHx8fDA%3D" class="menu-item-image w-100" />
-                        <h1 class="menu-card-title mt-3"> Starters / Appetizers </h1>
-                        <a href="" class="menu-item-link"> View All
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
-                            </svg> </a>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <div class="menu-item-card shadow p-3 mb-3 text-center">
+                        <div class="ai-icon mb-3">🤖</div>
+                        <h3 class="menu-card-title">Demand Prediction</h3>
+                        <p class="menu-item-link">AI-powered daily planning</p>
+                        <button class="custom-button w-100" onclick="showAIFeature('demand')">Try Now</button>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="menu-item-card shadow p-3 mb-3">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPPOKkRL1eKjFAtF56teIBa2CLUPArmRopUg&s" class="menu-item-image w-100" />
-                        <h1 class="menu-card-title mt-3"> Soups </h1>
-                        <a href="" class="menu-item-link"> View All
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
-                            </svg> </a>
+                
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <div class="menu-item-card shadow p-3 mb-3 text-center">
+                        <div class="ai-icon mb-3">📊</div>
+                        <h3 class="menu-card-title">Inventory Management</h3>
+                        <p class="menu-item-link">Smart stock optimization</p>
+                        <button class="custom-button w-100" onclick="showAIFeature('inventory')">Try Now</button>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="menu-item-card shadow p-3 mb-3">
-                        <img src="https://images.unsplash.com/photo-1529059997568-3d847b1154f0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNhbGFkfGVufDB8MHwwfHx8MA%3D%3D" class="menu-item-image w-100" />
-                        <h1 class="menu-card-title mt-3"> Salads </h1>
-                        <a href="" class="menu-item-link"> View All
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
-                            </svg> </a>
+                
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <div class="menu-item-card shadow p-3 mb-3 text-center">
+                        <div class="ai-icon mb-3">💬</div>
+                        <h3 class="menu-card-title">Feedback Analysis</h3>
+                        <p class="menu-item-link">Customer sentiment insights</p>
+                        <button class="custom-button w-100" onclick="showAIFeature('feedback')">Try Now</button>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="menu-item-card shadow p-3 mb-3">
-                        <img src="https://media.istockphoto.com/id/1173807289/photo/indian-food.webp?a=1&b=1&s=612x612&w=0&k=20&c=FCnaY2Gq6lVsvO4BU-YrJdE-bccfSYxVa_UZHORXgCM=" class="menu-item-image w-100" />
-                        <h1 class="menu-card-title mt-3"> Combos / Thali / Platters </h1>
-                        <a href="" class="menu-item-link"> View All
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
-                            </svg> </a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="menu-item-card shadow p-3 mb-3">
-                        <img src="https://media.istockphoto.com/id/2218308174/photo/indian-curry-tikka-masala-chicken-lamb-mutton-rogan-josh-with-rice-and-naan-bread-dark.webp?a=1&b=1&s=612x612&w=0&k=20&c=qPwShNAqG8S1iKKz91N9yNmdHwxX7JlpbNtYVDlWu2o=" class="menu-item-image w-100" />
-                        <h1 class="menu-card-title mt-3"> Indian Main Course </h1>
-                        <a href="" class="menu-item-link"> View All
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
-                            </svg> </a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="menu-item-card shadow p-3 mb-3">
-                        <img src="https://images.unsplash.com/photo-1697155406055-2db32d47ca07?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmlyeWFuaXxlbnwwfDB8MHx8fDA%3D" class="menu-item-image w-100" />
-                        <h1 class="menu-card-title mt-3"> Rice & Biryani </h1>
-                        <a href="" class="menu-item-link"> View All
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
-                            </svg> </a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="menu-item-card shadow p-3 mb-3">
-                        <img src="https://images.unsplash.com/photo-1590671909091-43ff144014fe?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW5kaWFuJTIwc3dlZXRzfGVufDB8MHwwfHx8MA%3D%3D" class="menu-item-image w-100" />
-                        <h1 class="menu-card-title mt-3"> Desserts </h1>
-                        <a href="" class="menu-item-link"> View All
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
-                            </svg> </a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="menu-item-card shadow p-3 mb-3">
-                        <img src="https://images.unsplash.com/photo-1630409346699-79481a79db52?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW5kaWFuJTIwZHJpbmtzfGVufDB8MHwwfHx8MA%3D%3D" class="menu-item-image w-100" />
-                        <h1 class="menu-card-title mt-3"> Beverages / Drinks </h1>
-                        <a href="" class="menu-item-link"> View All
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
-                            </svg> </a>
+                
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <div class="menu-item-card shadow p-3 mb-3 text-center">
+                        <div class="ai-icon mb-3">⚙️</div>
+                        <h3 class="menu-card-title">AI Setup</h3>
+                        <p class="menu-item-link">Configure API keys</p>
+                        <button class="custom-button w-100" onclick="showAIFeature('setup')">Configure</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="aiFeatureModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="aiModalTitle">AI Feature</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body" id="aiModalContent">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="explore-menu-section pt-3 pb-3" id="exploreMenuSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="menu-section-heading ml-3">Explore Menu</h1>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="https://images.unsplash.com/photo-1666001120694-3ebe8fd207be?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFuZWVyJTIwdGlra2F8ZW58MHx8MHx8fDA%3D" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title mt-3"> Starters / Appetizers </h1>
+                        <a href="pages/starters.html" class="menu-item-link"> View All
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                            </svg> 
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPPOKkRL1eKjFAtF56teIBa2CLUPArmRopUg&s" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title mt-3"> Soups </h1>
+                        <a href="pages/soups.html" class="menu-item-link"> View All
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                            </svg> 
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="https://images.unsplash.com/photo-1529059997568-3d847b1154f0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNhbGFkfGVufDB8MHwwfHx8MA%3D%3D" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title mt-3"> Salads </h1>
+                        <a href="pages/salads.html" class="menu-item-link"> View All
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                            </svg> 
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="https://media.istockphoto.com/id/1173807289/photo/indian-food.webp?a=1&b=1&s=612x612&w=0&k=20&c=FCnaY2Gq6lVsvO4BU-YrJdE-bccfSYxVa_UZHORXgCM=" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title mt-3"> Combos / Thali / Platters </h1>
+                        <a href="pages/combos.html" class="menu-item-link"> View All
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                            </svg> 
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="https://media.istockphoto.com/id/2218308174/photo/indian-curry-tikka-masala-chicken-lamb-mutton-rogan-josh-with-rice-and-naan-bread-dark.webp?a=1&b=1&s=612x612&w=0&k=20&c=qPwShNAqG8S1iKKz91N9yNmdHwxX7JlpbNtYVDlWu2o=" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title mt-3"> Indian Main Course </h1>
+                        <a href="pages/indian-main-course.html" class="menu-item-link"> View All
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                            </svg> 
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="https://images.unsplash.com/photo-1697155406055-2db32d47ca07?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmlyeWFuaXxlbnwwfDB8MHx8fDA%3D" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title mt-3"> Rice & Biryani </h1>
+                        <a href="pages/rice-biryani.html" class="menu-item-link"> View All
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                            </svg> 
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="https://images.unsplash.com/photo-1590671909091-43ff144014fe?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW5kaWFuJTIwc3dlZXRzfGVufDB8MHwwfHx8MA%3D%3D" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title mt-3"> Desserts </h1>
+                        <a href="pages/desserts.html" class="menu-item-link"> View All
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                            </svg> 
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="https://images.unsplash.com/photo-1630409346699-79481a79db52?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW5kaWFuJTIwZHJpbmtzfGVufDB8MHwwfHx8MA%3D%3D" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title mt-3"> Beverages / Drinks </h1>
+                        <a href="pages/beverages.html" class="menu-item-link"> View All
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                            </svg> 
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="healthy-food-section pt-5 pb-5">
         <div class="container">
             <div class="row">
@@ -196,6 +279,7 @@
             </div>
         </div>
     </div>
+
     <div class="delivery-and-payment-section pt-5 pb-5" id="deliveryAndPaymentSection">
         <div class="container">
             <div class="row">
@@ -226,6 +310,7 @@
             </div>
         </div>
     </div>
+
     <div class="thanking-customers-section pt-5 pb-5">
         <div class="container">
             <div class="row">
@@ -253,7 +338,6 @@
                                     <div class="modal-body">
                                         <img src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/gift-voucher-img.png" class="w-100" />
                                     </div>
-
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     </div>
@@ -268,22 +352,7 @@
             </div>
         </div>
     </div>
-    </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title thanking-customers-section-modal-title">Gift Voucher</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <img src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/gift-voucher-img.png" class="w-100" />
-                </div>
-                <div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button></div>
-            </div>
-        </div>
-    </div>
-    </div>
+
     <div class="follow-us-section pt-5 pb-5" id="followUsSection">
         <div class="container text-center">
             <h1 class="follow-us-section-heading">Follow Us</h1>
@@ -302,6 +371,8 @@
             <p class="footer-section-address">123 Ayur Vigyan Nagar, New Delhi, India.</p>
         </div>
     </div>
+
+    <!-- Chatbot -->
     <div id="chatbot-icon" title="Chat with us">
         <i class="fas fa-comments"></i>
     </div>
@@ -329,10 +400,10 @@
             </button>
         </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
     <script src="script.js"></script>
 </body>
 
