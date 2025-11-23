@@ -1,8 +1,5 @@
-// ===== CONFIGURATION =====
-// Replace with your actual Hugging Face Space URL
 const API_BASE_URL = 'https://guni501-kayastha-kitchen-aipowered.hf.space';
 
-// ===== CHATBOT FUNCTIONALITY =====
 let isChatOpen = false;
 
 function toggleChatbot() {
@@ -34,11 +31,11 @@ async function sendChatMessage() {
     
     const message = userInput.value.trim();
     
-    // Add user message
+
     addMessageToChat('user', message);
     userInput.value = '';
     
-    // Show typing indicator
+
     const typingIndicator = createTypingIndicator();
     chatMessages.appendChild(typingIndicator);
     chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -59,11 +56,9 @@ async function sendChatMessage() {
         }
         
         const data = await response.json();
-        
-        // Remove typing indicator
+
         typingIndicator.remove();
-        
-        // Add bot response
+
         addMessageToChat('bot', data.reply || data.response || "I received your message but couldn't process it properly.");
         
     } catch (error) {
@@ -96,7 +91,7 @@ function createTypingIndicator() {
     return typingElement;
 }
 
-// ===== AI FEATURE MODALS =====
+
 function showAIFeature(feature) {
     let modalTitle = '';
     let modalContent = '';
@@ -122,11 +117,10 @@ function showAIFeature(feature) {
             return;
     }
     
-    // Set modal content
+
     document.getElementById('aiModalTitle').textContent = modalTitle;
     document.getElementById('aiModalContent').innerHTML = modalContent;
-    
-    // Show modal
+
     $('#aiFeatureModal').modal('show');
 }
 
@@ -251,7 +245,6 @@ function getAISetupContent() {
     `;
 }
 
-// ===== AI FEATURE FUNCTIONS =====
 async function predictDemand() {
     const day = document.getElementById('daySelect').value;
     const weather = document.getElementById('weatherSelect').value;
@@ -284,7 +277,7 @@ async function predictDemand() {
         
     } catch (error) {
         console.error('Error:', error);
-        // Fallback prediction
+
         document.getElementById('demandOutput').textContent = "Based on Saturday and sunny weather, we predict HIGH demand today. \n\nRecommendations:\n• Staff: 8-10 people\n• Extra inventory: 25% above normal\n• Popular dishes: Biryani, Butter Chicken, Paneer Tikka";
         document.getElementById('demandResult').style.display = 'block';
     } finally {
@@ -323,7 +316,7 @@ async function optimizeInventory() {
         
     } catch (error) {
         console.error('Error:', error);
-        // Fallback optimization
+
         document.getElementById('inventoryOutput').innerHTML = `
             <strong>Inventory Optimization Complete</strong><br><br>
             <strong>Recommended Actions:</strong><br>
@@ -371,7 +364,7 @@ async function analyzeFeedback() {
         
         const data = await response.json();
         
-        // Format the sentiment result
+
         let output = '';
         if (Array.isArray(data.sentiment_result)) {
             data.sentiment_result.forEach(item => {
@@ -388,7 +381,7 @@ async function analyzeFeedback() {
         
     } catch (error) {
         console.error('Error:', error);
-        // Fallback sentiment analysis
+
         const positiveWords = ['good', 'great', 'excellent', 'amazing', 'wonderful', 'delicious', 'fantastic'];
         const negativeWords = ['bad', 'terrible', 'awful', 'horrible', 'disgusting', 'poor'];
         
@@ -433,11 +426,11 @@ async function testConnection() {
     }
 }
 
-// ===== EVENT LISTENERS =====
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Kayastha Kitchen AI System Initialized');
     
-    // Chatbot event listeners
+
     const chatbotIcon = document.getElementById('chatbot-icon');
     const closeBtn = document.getElementById('close-btn');
     const sendBtn = document.getElementById('send-btn');
@@ -454,7 +447,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // View Menu button functionality
+
     const viewMenuButtons = document.querySelectorAll('.custom-menu-button');
     viewMenuButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -464,7 +457,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Order Now button functionality
+    
     const orderButtons = document.querySelectorAll('.custom-outline-button, .custom-button');
     orderButtons.forEach(button => {
         if (button.textContent.includes('Order Now')) {
@@ -474,7 +467,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Watch Video button
+
     const watchVideoButtons = document.querySelectorAll('.custom-button');
     watchVideoButtons.forEach(button => {
         if (button.textContent.includes('Watch Video')) {
@@ -485,7 +478,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// ===== HELPER FUNCTIONS =====
+
 function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
     notification.className = `alert alert-${type === 'error' ? 'danger' : 'success'}`;
@@ -505,8 +498,6 @@ function showNotification(message, type = 'info') {
     }, 3000);
 }
 
-// ===== FALLBACK FUNCTIONS =====
-// These functions provide basic functionality even if the API is down
 function getFallbackDemandPrediction(day, weather, event) {
     const predictions = {
         'Monday': 'Low demand expected. Normal staffing and inventory levels.',
