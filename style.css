@@ -1,15 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
 
+body {
+    padding-top: 60px; 
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+}
+
+body.menu-page {
+    padding-top: 50px !important; 
+}
+
 .navbar {
     padding: 0.5rem 1rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     min-height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1030;
+    background-color: white;
+}
+
+.navbar.compact-navbar .kayastha-kitchen-logo {
+    width: 40px !important;
+    height: 40px !important; 
+    margin-right: 8px 
 }
 
 .kayastha-kitchen-logo {
-    width: 50px; 
-    height: 45px; 
-    margin-right: 10px; 
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
 }
 
 .navbar-nav .nav-link {
@@ -18,6 +42,12 @@
     color: #323f4b !important;
     font-family: 'Roboto', sans-serif;
     transition: color 0.3s ease;
+}
+
+/* Smaller nav links for compact navbar */
+.compact-navbar .nav-link {
+    padding: 0.3rem 0.8rem !important;
+    font-size: 0.9rem !important;
 }
 
 .navbar-nav .nav-link:hover {
@@ -29,11 +59,17 @@
     padding: 0.25rem 0.5rem;
 }
 
-body {
-    padding-top: 60px; 
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
+.brand-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.compact-navbar .brand-text {
+    font-size: 1.1rem !important;
+}
+
+.compact-navbar .navbar-collapse {
+    margin-top: 0 !important;
 }
 
 .banner-section-bg-container {
@@ -42,24 +78,25 @@ body {
     height: 100vh;
     display: flex;
     align-items: center;
-    margin-top: 0; 
-    padding-top: 0; 
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .banner-section-bg-container > .text-center {
     margin-top: 60px;
     width: 100%;
 }
+
 .banner-heading {
     color: white;
-    font-family: roboto;
+    font-family: 'Roboto', sans-serif;
     font-size: 52px;
     font-weight: 300;
 }
 
 .banner-caption {
     color: #f5f7fa;
-    font-family: "roboto";
+    font-family: 'Roboto', sans-serif;
     font-size: 33px;
     font-weight: 300;
 }
@@ -72,6 +109,12 @@ body {
     border-width: 0;
     border-radius: 8px;
     margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.custom-menu-button:hover {
+    background-color: #a58d00;
+    transform: translateY(-2px);
 }
 
 .custom-outline-button {
@@ -84,7 +127,15 @@ body {
     border-style: solid;
     border-color: #d0b200;
     margin-right: 10px;
+    transition: all 0.3s ease;
 }
+
+.custom-outline-button:hover {
+    background-color: #d0b200;
+    color: white;
+    transform: translateY(-2px);
+}
+
 
 .wcu-section {
     background-color: #f9fbfe;
@@ -93,14 +144,14 @@ body {
 }
 
 .wcu-section-heading {
-    font-family: "roboto";
+    font-family: 'Roboto', sans-serif;
     font-size: 28px;
     font-weight: 700;
     color: #183b56;
 }
 
 .wcu-section-description {
-    font-family: "roboto";
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     color: #5a7184;
 }
@@ -112,6 +163,12 @@ body {
     border-width: 1px;
     border-color: #e5eaf4;
     border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wcu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
 .wcu-card-image {
@@ -120,7 +177,7 @@ body {
 }
 
 .wcu-card-title {
-    font-family: "roboto";
+    font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 22px;
     color: #323f4b;
@@ -128,7 +185,7 @@ body {
 
 .wcu-card-description {
     color: #7b8794;
-    font-family: "Roboto";
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
 }
 
@@ -139,7 +196,7 @@ body {
 }
 
 .menu-section-heading {
-    font-family: "roboto";
+    font-family: 'Roboto', sans-serif;
     font-size: 28px;
     font-weight: 700;
     color: #183b56;
@@ -147,6 +204,11 @@ body {
 
 .menu-item-card {
     border-radius: 16px;
+    transition: transform 0.3s ease;
+}
+
+.menu-item-card:hover {
+    transform: translateY(-5px);
 }
 
 .menu-item-image {
@@ -156,17 +218,24 @@ body {
 }
 
 .menu-card-title {
-    font-family: "roboto";
+    font-family: 'Roboto', sans-serif;
     font-size: 20px;
     font-weight: 500;
     color: #183b56;
 }
 
 .menu-item-link {
-    font-family: "roboto";
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 300;
     color: #d0b200;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-item-link:hover {
+    color: #a58d00;
+    text-decoration: none;
 }
 
 .offers {
@@ -174,6 +243,17 @@ body {
     font-weight: 600;
     font-style: italic;
 }
+
+
+.ai-management-section {
+    background: linear-gradient(135deg, #f9fbfe 0%, #e3f2fd 100%);
+}
+
+.ai-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
 
 .healthy-food-section {
     background-color: #f9fbfe;
@@ -186,7 +266,7 @@ body {
 }
 
 .healthy-food-section-heading {
-    font-family: "Roboto";
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 28px;
     color: #183b56;
@@ -194,7 +274,7 @@ body {
 
 .healthy-food-section-description {
     color: #5a7184;
-    font-family: "Roboto";
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
 }
 
@@ -206,14 +286,21 @@ body {
     border-width: 0;
     border-radius: 8px;
     margin-right: 10px;
+    transition: all 0.3s ease;
 }
+
+.custom-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
 
 .delivery-and-payment-section-img {
     width: 270px;
 }
 
 .delivery-and-payment-section-heading {
-    font-family: "Roboto";
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 28px;
     color: #183b56;
@@ -221,7 +308,7 @@ body {
 
 .delivery-and-payment-section-description {
     color: #5a7184;
-    font-family: "Roboto";
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
 }
 
@@ -231,6 +318,7 @@ body {
     margin-right: 28px;
 }
 
+
 .thanking-customers-section {
     background-image: radial-gradient(#fff8db, #fae38c);
     padding-top: 50px;
@@ -238,7 +326,7 @@ body {
 }
 
 .thanking-customers-section-heading {
-    font-family: "Roboto";
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 28px;
     color: #183b56;
@@ -246,13 +334,19 @@ body {
 
 .thanking-customers-section-description {
     color: #5a7184;
-    font-family: "Roboto";
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
 }
 
 .thanking-customers-section-img {
     width: 270px;
     margin-bottom: 20px;
+}
+
+.thanking-customers-section-modal-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #183b56;
 }
 
 .follow-us-section {
@@ -262,36 +356,11 @@ body {
 }
 
 .follow-us-section-heading {
-    font-family: "Roboto";
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 28px;
     color: #183b56;
     text-align: center;
-}
-
-.footer-section {
-    background-color: #0d2436;
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-
-.footer-section-mail-id {
-    color: #959ead;
-    font-family: "Roboto";
-    font-weight: bold;
-    font-size: 16px;
-    margin-top: 20px;
-}
-
-.footer-section-address {
-    color: #959ead;
-    font-family: "Roboto";
-    font-size: 14px;
-}
-
-.icon {
-    font-size: 35px;
-    color: #d0b200;
 }
 
 .follow-us-icon-container {
@@ -303,6 +372,42 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.follow-us-icon-container:hover {
+    transform: scale(1.1);
+    background-color: #d0b200;
+}
+
+.follow-us-icon-container:hover .icon {
+    color: white;
+}
+
+.icon {
+    font-size: 35px;
+    color: #d0b200;
+    transition: color 0.3s ease;
+}
+
+.footer-section {
+    background-color: #0d2436;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-section-mail-id {
+    color: #959ead;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.footer-section-address {
+    color: #959ead;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
 }
 
 #chatbot-icon {
@@ -314,7 +419,7 @@ body {
     border-radius: 50%;
     width: 60px;
     height: 60px;
-    display: flex; /* Changed to flex */
+    display: flex;
     align-items: center;
     justify-content: center;
     font-size: 24px;
@@ -322,6 +427,11 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     z-index: 10000;
     transition: all 0.3s ease;
+}
+
+#chatbot-icon:hover {
+    transform: scale(1.1);
+    background: #a58d00;
 }
 
 #chatbot-window {
@@ -337,13 +447,11 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-   
 }
 
 #chatbot-window.hidden {
     display: none !important;
 }
-
 
 #chat-header {
     background: #d0b200;
@@ -352,7 +460,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 600;
     font-size: 16px;
 }
@@ -447,7 +555,7 @@ body {
 #send-btn:hover {
     background: #a58d00;
 }
-/* Typing indicator styles */
+
 .typing-indicator {
     display: flex;
     align-items: center;
@@ -475,6 +583,211 @@ body {
     0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
     40% { transform: scale(1); opacity: 1; }
 }
+
+.menu-page-container {
+    padding-top: 80px !important; 
+    padding-bottom: 50px;
+}
+
+.menu-page-heading {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #183b56;
+    margin-bottom: 30px;
+}
+
+.menu-item-card-page {
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    background: white;
+    border: 1px solid #e5eaf4;
+}
+
+.menu-item-card-page:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.menu-item-image-page {
+    border-radius: 16px 16px 0 0;
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.menu-item-description {
+    color: #5a7184;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #d0b200;
+    margin-top: 10px;
+}
+
+.back-to-menu-btn {
+    background-color: #d0b200;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.back-to-menu-btn:hover {
+    background-color: #a58d00;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+
+.ai-modal-content {
+    padding: 20px;
+}
+
+.ai-result {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    border-left: 4px solid #d0b200;
+}
+
+.ai-loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.api-key-setup {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0;
+}
+
+.api-input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.save-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.save-btn:hover {
+    background: #218838;
+}
+
+
+.modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+    background: #d0b200;
+    color: white;
+    border-radius: 15px 15px 0 0;
+    border-bottom: none;
+}
+
+.modal-header .close {
+    color: white;
+    opacity: 0.8;
+}
+
+.modal-header .close:hover {
+    opacity: 1;
+}
+
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-control:focus {
+    border-color: #d0b200;
+    box-shadow: 0 0 0 0.2rem rgba(208, 178, 0, 0.25);
+}
+
+
+.btn.custom-button {
+    background: #d0b200;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn.custom-button:hover {
+    background: #a58d00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn.custom-button:disabled {
+    background: #6c757d;
+    transform: none;
+    box-shadow: none;
+}
+
+
+.alert {
+    border-radius: 8px;
+    border: none;
+    padding: 15px 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.alert-info {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+
 @media (max-width: 768px) {
     #chatbot-window {
         width: 90%;
@@ -500,6 +813,84 @@ body {
     }
     
     .navbar-brand span {
-        display: none;
+        display: none !important;
+    }
+    
+    .menu-section-heading {
+        font-size: 24px;
+    }
+    
+    .wcu-section-heading {
+        font-size: 24px;
+    }
+    
+    .healthy-food-section-heading {
+        font-size: 24px;
+    }
+    
+    .delivery-and-payment-section-heading {
+        font-size: 24px;
+    }
+    
+    .thanking-customers-section-heading {
+        font-size: 24px;
+    }
+    
+    .follow-us-section-heading {
+        font-size: 24px;
+    }
+    
+    .menu-page-heading {
+        font-size: 28px;
+    }
+    
+
+    .navbar.compact-navbar {
+        padding: 0.2rem 0.5rem !important;
+        min-height: 45px !important;
+    }
+    
+    .compact-navbar .kayastha-kitchen-logo {
+        width: 35px;
+        height: 30px;
+    }
+    
+    .menu-page-container {
+        padding-top: 70px;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner-heading {
+        font-size: 24px;
+    }
+    
+    .banner-caption {
+        font-size: 16px;
+    }
+    
+    .custom-menu-button,
+    .custom-outline-button,
+    .custom-button {
+        width: 110px;
+        height: 40px;
+        font-size: 14px;
+    }
+    
+    .menu-card-title {
+        font-size: 18px;
+    }
+    
+    .menu-page-heading {
+        font-size: 24px;
+    }
+    
+    .menu-page-container {
+        padding-top: 60px;
+    }
+    
+    .back-to-menu-btn {
+        padding: 8px 16px;
+        font-size: 12px;
     }
 }
